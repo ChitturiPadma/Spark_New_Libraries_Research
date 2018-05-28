@@ -1,0 +1,5 @@
+In today's world there has been vast amount of data being generated from mobiles/electronic devices. This data constitues
+spatio-temporal aspect. The two known frameworks for large scale data processing are Hadoop and Spark. Hadoop has its 
+extenstions Spatial Hadoop and Hadoop-GIS. Since the processing of Hadoop is mostly disk based, in-memory processing 
+frameworks such as Spark can be leveraged for processing spatial data. There are 3 systems that implement Spatial operators 
+with Spark - GeoSpark, SpatialSpark and STARK
