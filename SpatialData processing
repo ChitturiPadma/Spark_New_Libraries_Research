@@ -17,7 +17,7 @@ as API to express the computation in terms of spatial operators/filters. Support
  The above queries can be execute with or without having an index. The predicate withinDistance is only supported for joins.
  
  GeoSpark uses R-trees and quad trees to create indexes over RDDs. Persistent index seems to be not available since there is
- no index load functionality
+ no index load functionality.
  
 
 
