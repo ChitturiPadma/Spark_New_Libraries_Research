@@ -9,7 +9,7 @@ extenstions Spatial Hadoop and Hadoop-GIS. Since the processing of Hadoop is mos
 frameworks such as Spark can be leveraged for processing spatial data. There are 3 systems that implement Spatial operators 
 with Spark - GeoSpark, SpatialSpark and STARK
 
-GeoSpark - Provides PointRDD, RectangleRDD (RDD of rectangle objects defined by Points and the rectangles are distributed
+GeoSpark (Magellan) - Provides PointRDD, RectangleRDD (RDD of rectangle objects defined by Points and the rectangles are distributed
 across machines), PolygonRDD, and CircleRDD. These RDDs are created over plain RDDs and available 
 as API to express the computation in terms of spatial operators/filters. Supports the following queries:
   1. K-nearest neighbor queries
