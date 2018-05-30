@@ -17,11 +17,11 @@ as API to express the computation in terms of spatial operators/filters. Support
   3. Join queries (with contains or intersects predicates)
  The above queries can be execute with or without having an index. The predicate withinDistance is only supported for joins.
  
- GeoSpark uses R-trees and quad trees to create indexes over RDDs. Spatial indexing strategies define how the Spatial RDD
+ GeoSpark (Magellan) uses R-trees and quad trees to create indexes over RDDs. Spatial indexing strategies define how the Spatial RDD
  could be partitioned using a grid structure and assign the grids to machines for parallel execution. Internall GeoSpark
  adapts a strategy to decide whether a local index needs to be created on Spatial RDD partition inorder to balance between 
  execution time and memory/cpu utilization.
  
  
-
+STARK:
 
