@@ -1,4 +1,4 @@
-package com.expedia.geoanalytics
+package com.demos.geoanalytics
 
 import magellan._
 import org.apache.spark._
