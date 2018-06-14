@@ -1,4 +1,4 @@
-package com.expedia.spark.datasource.rest
+package com.demos.spark.datasource.rest
 
 import org.apache.spark.SparkContext
 import org.apache.spark.sql.sources.{BaseRelation, DataSourceRegister, RelationProvider}
