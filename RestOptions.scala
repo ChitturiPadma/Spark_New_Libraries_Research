@@ -1,4 +1,4 @@
-package com.expedia.spark.datasource.rest
+package com.demos.spark.datasource.rest
 
 
 import java.sql.{Connection, DriverManager}
