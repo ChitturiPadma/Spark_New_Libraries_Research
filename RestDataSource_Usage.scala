@@ -14,7 +14,7 @@ object RestDataSource_Usage {
     val sess = SparkSession.builder().appName("CustomDataSource_Usage").master("local[*]")
       .config("spark.driver.host","localhost").getOrCreate()
 
-    // Create the target url string for Soda API for data source
+    // Create the target url string for REST API for data source
     
     val uri = "https://maps.googleapis.com/maps/api/geocode/json"
 
@@ -41,7 +41,7 @@ object RestDataSource_Usage {
     val parmg = Map("url" -> uri, "input" -> "inputtbl", "method" -> "GET", "readTimeout" -> "10000", "connectionTimeout" -> "2000", "partitions" -> "10","userId" -> "omnihub", "userPassword" -> "omnihub", "callStrictlyOnce" -> "Y")
 
     // Now we create the Dataframe which contains the result from the call to the  API for the 3 different input data points
-    val resultsDf = sess.read.format("com.expedia.spark.datasource.rest.RestDataSource").options(parmg).load()
+    val resultsDf = sess.read.format("com.demos.spark.datasource.rest.RestDataSource").options(parmg).load()
 
     resultsDf.printSchema()
 
