@@ -1,0 +1,20 @@
+In this big data era, we deal with numerous data sources. Some of these are text files, semi-structured files such 
+as XML, JSON, EDW (Enterprise Datawarehouse), RDBMS etc. The data from these sources is available in bulk formats and 
+using the available connectors, we can access & pull this data into our Hadoop platforms and munge this for analytical
+purposes.
+
+Many times we need to pull data from sources that support API level access.These API services can be paid ones (external
+ third party) or when working with  multiple business units, information could be exposed as an API providing respective
+ authentication. Also, some of the predictive analytics services are provided as an API access
+ 
+ The most commonly used API-based data services are available as REST. The REST API works well when accessing certain feature
+ in an online application. But when it comes to accessing the REST API with bulk of parameters (these parameters
+ fetched from some file location), we need to make call for the REST service multiple times providing the parameters from the 
+ respective file/table. 
+ 
+ From techncial standpoint, this involves running a loop and creating REST call objects. This would increase the memory usage
+ and especially when using in-memory frameworks such as Spark, for every single record making a REST call would slow 
+ down the execution time. 
+ 
+ How about parallelizing the REST calls ? To achieve this Spark provides flexibility to extend DataSource and we can 
+ implement Custom Data Source.
