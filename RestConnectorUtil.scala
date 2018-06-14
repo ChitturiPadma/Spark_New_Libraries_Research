@@ -1,4 +1,4 @@
-package com.expedia.spark.datasource.rest
+package com.demos.spark.datasource.rest
 
 
 import java.io._
@@ -68,13 +68,6 @@ object RestConnectorUtil {
     resp
   }
 
- /* private def addQryParmToUri(uri: String, data: String) : String = {
-
-    val newUri = uri + data
-    val queryParamStr = if (newUri contains "?") newUri + URLEncoder.encode("q")+ "=" + URLEncoder.encode("type=\"locality\"") + "&" + URLEncoder.encode("sorts")+ "=" + URLEncoder.encode("absolutePopularity") else newUri + "?" + URLEncoder.encode("q")+ "=" + URLEncoder.encode("type=\"locality\"") + "&" + URLEncoder.encode("sorts")+ "=" + URLEncoder.encode("absolutePopularity")
-    queryParamStr
-  }*/
-
   private def addQryParmToUri(uri: String, data: String) : String = {
     val newUri = if (uri contains "?") uri + "&" + data else uri + "?" + data
 
@@ -110,9 +103,6 @@ object RestConnectorUtil {
     val outArrB = keys.zipWithIndex.map{case(keyEle, index) => "\"" + keyEle +"\":\"" +values(index)+"\""}
     "{" + outArrB.mkString(",") + "}"
   }
-
-
-  //def prepareTextInput(keys: Array[String], values: Array[String]) : String =  "/"+URLEncoder.encode(values.head)+"/adjacent"
 
   def prepareTextInput(keys: Array[String], values: Array[String]) : String = {
 
