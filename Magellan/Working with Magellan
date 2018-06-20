@@ -1,3 +1,0 @@
-This is a collection of libraries and API built on top of Apache Spark to perform geospatial analytics on big data sets.
-It internally leverages Spark Dataframes, Catalyst optimizer, Tungsten and indexing mechanisms to perfrom the spatial 
-operations
