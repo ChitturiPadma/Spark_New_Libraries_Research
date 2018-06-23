@@ -17,6 +17,9 @@ Point in Polygon Test: Ray Casting algorithm.
 https://en.wikipedia.org/wiki/Point_in_polygon
 For a polygon with p edges, time complexity of the algorithm is O(p).
 
-For a polygon we can compute the boundix box (smallest axis parallel rectangle)
+For a polygon we can compute the bounding box (smallest axis parallel rectangle) that encloses the polygon. Post this, to
+check if a point lies within the polygon, first check if the point is within the bounding box. If its not then the point 
+cannot be iwthin the polygon.
+In case if the point is within the bounding box, we perform the expensive operation of point in polygon test. 
 
 
