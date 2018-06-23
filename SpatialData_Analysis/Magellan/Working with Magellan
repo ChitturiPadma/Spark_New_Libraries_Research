@@ -1,3 +1,22 @@
 This is a collection of libraries and API built on top of Apache Spark to perform geospatial analytics on big data sets.
 It internally leverages Spark Dataframes, Catalyst optimizer, Tungsten and indexing mechanisms to perfrom the spatial 
-operations
+operations.
+
+Spatial JOINs:
+Let's say we have have point data set and polygon dataset and we need to determine if the points lie within the polygon
+
+Time take for the JOIN operation depends on the size of the polygon dataset (i.e proportional to the number of polygons 
+in the dataset). In case og naive JOIN, look at the bounding box of each polygon to decide whether a particular point has a 
+probability of being inside. If its within the bounding box, perform an expensive point in polygon test and determine 
+if its actually inside the polygon.
+ 
+Using Magellan, Spatial Join Rule can be injected into Catalyst, which builds spatial indices on the fly for both the 
+point and polygon datasets. Hence join uses these indices and avoid expensive Cartesian Join.
+
+Point in Polygon Test: Ray Casting algorithm.
+https://en.wikipedia.org/wiki/Point_in_polygon
+For a polygon with p edges, time complexity of the algorithm is O(p).
+
+For a polygon we can compute the boundix box (smallest axis parallel rectangle)
+
+
