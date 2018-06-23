@@ -22,4 +22,21 @@ check if a point lies within the polygon, first check if the point is within the
 cannot be iwthin the polygon.
 In case if the point is within the bounding box, we perform the expensive operation of point in polygon test. 
 
+Geospatial Indices:
+What if set of polygons surrounded by a large boundibg box ?
+
+Sub-divide the bounding box into small cells. For each cell, determine if the cell is either within or oeverlaps or is disjoint
+from the polygon. 
+
+Now for each point, find if it falls inside a cell. After determining the cell, prune all the polygons that do not 
+contain/overlap that cell.
+
+For polygons that contain the cell -> point also lies within the polygon.
+The expensive operation of point in polygon test is performed when there are cells that overlap/contained in the 
+polygon.
+
+Methodologies for contructing small cells inside a large bounding box ->  Space filling curves and Z-order curves
+https://en.wikipedia.org/wiki/Space-filling_curve
+https://en.wikipedia.org/wiki/Z-order_curve
+
 
