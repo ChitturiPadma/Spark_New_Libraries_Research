@@ -39,4 +39,20 @@ Methodologies for contructing small cells inside a large bounding box ->  Space 
 https://en.wikipedia.org/wiki/Space-filling_curve
 https://en.wikipedia.org/wiki/Z-order_curve
 
+Support for the following spatial formats of the data -
+1. ESRI
+2. GeoJSON
+3. OSM-XML
+4. WKT
+
+Spatial indexes support ZOrderCurves. When given a column of shapes, we can index the shapes to a given precision, 
+using a geohash indexer. Usage of geohash indexer produces list of ZOrder Curves which together cover the polygon.
+
+The spatial joins are by default treated as cratesian joins. To avoid this, add a spatial join rule by using the below
+line of code -
+magellan.Utils.injectRules(spark)
+
+Also, during the join provide precision which automatically uses indexes to speed up the join.
+
+
 
