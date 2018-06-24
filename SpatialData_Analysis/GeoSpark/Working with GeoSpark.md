@@ -10,4 +10,3 @@ fly decides whether a spatial index needs to be created on SRDD partition to ach
 SRDDs offer support for spatial operations(geometric operations that follow Open Geospace Consortium - OGC). SRDD types -
 Point RDD and Polygon RDD : provide support for geometrical and distance operations.
 
-
