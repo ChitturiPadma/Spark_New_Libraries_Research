@@ -1,1 +1,1 @@
-While executing jobs in Spark, common problem we all would have encountered is 
+While executing jobs in Spark, common problem we all would have encountered is- Jobs being run sequentially irrespective of the dependencies they have. How about executing spark actions in an Async fashion ? This would save lot of the time especially when scheduling independent jobs.  (let's say one job executing a machine learning pipeline from the DataPrep and other being writing the ETL results to a persistent store).
