@@ -1,0 +1,12 @@
+Can we dervie Certainity from Uncertainity ? 
+
+It's a common scenario to make connections with Database, make webservice calls to 3rd party API
+especially when dealing with data processing frameworks such as Spark. The main question that araises is can we parallelize 
+these executions concurrently ? As we all knew, Spark runs pieces of computation called as tasks insided JVMs (executors).
+The number of tasks is limited by the number of cores that each machine holds. Each task is executed by a single thread 
+which runs the serialized code synchronously. This single thread executes each record sequentially. What if for each record
+some third party API call needs to be invokded or connection to DB needs to be made ? 
+
+We can achieve concurrency in spark transformations using Futures.The level of concurrency could be unbouded awaiting the 
+results endlessly which has it's own disadvantage of throwing OOM exceptions. The better way to deal with unbouded
+concurrency is to incorporate Batched concurrent execution using Futures.
