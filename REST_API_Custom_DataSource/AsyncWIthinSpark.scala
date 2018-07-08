@@ -1,4 +1,4 @@
-package com.expedia.spark.datasource.rest
+package com.spark.demos
 
 
 import org.apache.spark._
@@ -36,7 +36,7 @@ object ConcurrentContext {
       }
   }
 }
-object AsyncWIthinSpark {
+object AsyncWithinSpark {
 
 
   def slowFunc(x:Int):(Int, Try[Int])={
