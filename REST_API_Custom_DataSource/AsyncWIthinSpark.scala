@@ -50,16 +50,12 @@ object AsyncWithinSpark {
       it =>
        /* Unbounded concurrent execution using Futures  */
        // ConcurrentContext.awaitAll(it).map{case(ele:Int, tryEle:Try[Int]) =>
-
         // Batched concurrent execution, awaiting each batchSize which solves unbouded parallelism and OOM
         ConcurrentContext.awaitBatch(it).map{case(ele:Int, tryEle:Try[Int]) =>
         (ele.toString,
           tryEle match {
             case Success(ele) => ele.toString
-            case Failure(ex) => "ERROR:" +ex.getMessage} )
-      }
-    }
+            case Failure(ex) => "ERROR:" +ex.getMessage} ) } }
     asyncRes.collect().foreach(println)
   }
-
 }
